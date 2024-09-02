@@ -154,7 +154,7 @@ class DuckduckgoApiWebSearch:
 
         try:
             results = self.ddgs.text(**payload)
-        except exception as e:
+        except Exception as e:
             raise DuckduckgoApiWebSearchError(f"An error occurred while querying {self.__class__.__name__}."
                                            f"Error: {e}") from e
 
