@@ -8,13 +8,12 @@ version = '0.1.0'
 description = "A Haystack component integrating Duckduckgo API for WebSearch"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {text = "Apache 2"}
+license = {text = "Apache-2.0"}
 authors = [
     {name = "Giovanni Alzetta", email = "giovannialzetta@gmail.com"},
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: Apache 2",
     "Operating System :: OS Independent",
 ]
 dynamic = ["dependencies"]
