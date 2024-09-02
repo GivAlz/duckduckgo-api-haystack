@@ -13,7 +13,7 @@ Haystack component to use Websearch via the freely available Duckduckgo API.
 ## Installation
 
 ```console
-pip install duckduckgo-api-websearch
+pip install duckduckgo-api-haystack
 ```
 
 ## Overview
