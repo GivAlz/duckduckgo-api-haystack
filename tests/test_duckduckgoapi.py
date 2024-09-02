@@ -1,4 +1,4 @@
-from duckduckgo_api_websearch import DuckduckgoApiWebSearch
+from duckduckgo_api_haystack import DuckduckgoApiWebSearch
 
 from haystack import Document
 
@@ -12,7 +12,7 @@ class TestDuckduckgoApiWebSearch:
         assert data == {'init_parameters': {'allowed_domain': 'test.com', 'backend': 'api', 'max_results': 10,
                                             'proxy': 'proxytest.com', 'region': 'wt-wt', 'safesearch': 'moderate',
                                             'timelimit': None, 'timeout': 20, 'top_k': 12, 'use_answers': True},
-                        'type': 'duckduckgo_api_websearch.duckduckgoapi.DuckduckgoApiWebSearch'}
+                        'type': 'duckduckgo_api_haystack.duckduckgoapi.DuckduckgoApiWebSearch'}
         assert data == new_component.to_dict()
 
     def test_search_no_answers(self):
