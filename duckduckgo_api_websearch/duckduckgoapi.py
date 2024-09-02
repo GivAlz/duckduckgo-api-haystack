@@ -3,7 +3,6 @@
 # SPDX-FileCopyrightText: 2022-present deepset GmbH <info@deepset.ai>
 #
 # SPDX-License-Identifier: Apache-2.0
-from sys import exception
 from typing import Any, Dict, List, Optional, Union
 
 from duckduckgo_search import DDGS
@@ -142,7 +141,7 @@ class DuckduckgoApiWebSearch:
         if self.use_answers:
             try:
                 answers = self.ddgs.answers(query)
-            except exception as e:
+            except Exception as e:
                 raise DuckduckgoApiWebSearchError(f"An error occurred while querying {self.__class__.__name__}."
                                                f"Error: {e}") from e
             for answer in answers:
