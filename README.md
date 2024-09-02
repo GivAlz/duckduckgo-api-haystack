@@ -1,6 +1,6 @@
 # DuckduckgoApiWebSearch
 
-Search engine using Duckduckgo API.
+Haystack component to use Websearch via the freely available Duckduckgo API.
 
 -----
 
