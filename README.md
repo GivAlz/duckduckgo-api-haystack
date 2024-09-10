@@ -8,7 +8,7 @@ Haystack component to use Websearch via the freely available Duckduckgo API.
 
 - [Installation](#Installation)
 - [Overview](#Overview)
-- [Basic Usage](#Basic Usage)
+- [Basic Usage](#Basic_Usage)
 - [License](#License)
 
 ## Installation
