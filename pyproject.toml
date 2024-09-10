@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "duckduckgo-api-haystack"
-version = '0.1.1'
+version = '0.1.11'
 description = "A Haystack component integrating Duckduckgo API for WebSearch"
 readme = "README.md"
 requires-python = ">=3.8"
