@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2022-present deepset GmbH <info@deepset.ai>
 #
 # SPDX-License-Identifier: Apache-2.0
+from time import time, sleep
 from typing import Any, Dict, List, Optional, Union
 
 from duckduckgo_search import DDGS
@@ -44,7 +45,8 @@ class DuckduckgoApiWebSearch:
         allowed_domain: str = "",
         timeout: int = 10,
         use_answers: bool = False,
-        proxy: str | None = None
+        proxy: str | None = None,
+        max_search_frequency: float = float('inf')
     ):
         """
         Initialize the DuckduckgoWebSearch component.
@@ -66,7 +68,8 @@ class DuckduckgoApiWebSearch:
         :param allowed_domain: search on a specific domain
         :param timeout: Timeout for each search request
         :param use_answers: (bool) Includes the answer search by duckduckgo. Defaults to False.
-        :param proxy: web addres to proxy
+        :param proxy: web address to proxy
+        :param max_search_frequency: Minimum time to pass between each search in seconds (defaults to no limit)
         """
 
         self.top_k = top_k
@@ -88,6 +91,21 @@ class DuckduckgoApiWebSearch:
 
         self.proxy = proxy
         self.ddgs = DDGS(proxy=self.proxy)
+
+        self.max_search_frequency = max_search_frequency
+        self.last_search_time = 0
+
+    def _rate_limit(self):
+        """
+        Implements rate limiting based on the max_searches_per_second parameter.
+        """
+        if self.max_search_frequency != float('inf'):
+            current_time = time()
+            time_since_last_search = current_time - self.last_search_time
+            time_to_wait = max(0.0, self.max_search_frequency - time_since_last_search)
+            if time_to_wait > 0:
+                sleep(time_to_wait)
+            self.last_search_time = time()
 
 
     def to_dict(self) -> Dict[str, Any]:
@@ -137,6 +155,8 @@ class DuckduckgoApiWebSearch:
         :raises RatelimitException: Raised for exceeding API request rate limits.
         :raises TimeoutException: Raised for API request timeouts.
         """
+        self._rate_limit() # If configured to do so, wait for the next search
+
         documents = []
         if self.use_answers:
             try:
