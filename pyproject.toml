@@ -7,7 +7,7 @@ name = "duckduckgo-api-haystack"
 version = '0.1.12'
 description = "A Haystack component integrating Duckduckgo API for WebSearch"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = {text = "Apache-2.0"}
 authors = [
     {name = "Giovanni Alzetta", email = "giovannialzetta@gmail.com"},
