@@ -82,6 +82,15 @@ The interaction between these parameters depends on the `use_answers` setting:
 - `use_answers=False`: The component retrieves up to max_results search results.
 - `use_answers=True`: The component returns the `top_k` results from a list containing answers and search results.
 
+## Rate Limitations
+
+Too many requests could cause the API to fail because of rate limitations.
+
+To fix this issue use a proxy or reduce the number of calls.
+
+This issue could also cause tests to fail.
+
 ## License
 
 `duckduckgo-api-websearch` is distributed under the terms of the [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) license.
+
