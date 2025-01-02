@@ -84,9 +84,8 @@ The interaction between these parameters depends on the `use_answers` setting:
 
 ## Rate Limitations
 
-Too many requests could cause the API to fail because of rate limitations.
-
-To fix this issue use a proxy or reduce the frequency of the calls.
+Too many requests could cause the API to fail because of rate limitations; to fix this issue use a proxy or reduce 
+the frequency of the calls.
 
 ## License
 
