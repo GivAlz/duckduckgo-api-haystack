@@ -8,7 +8,7 @@ class TestDuckduckgoApiWebSearch:
 
     def test_to_from_dict(self):
         component = DuckduckgoApiWebSearch(top_k=12, allowed_domain="test.com", timeout=20,
-                                        use_answers=True, proxy="proxytest.com")
+                                           use_answers=True, proxy="proxytest.com")
         data = component.to_dict()
         new_component = DuckduckgoApiWebSearch().from_dict(data)
         assert data == {'init_parameters': {'allowed_domain': 'test.com', 'backend': 'api', 'max_results': 10,
@@ -27,7 +27,12 @@ class TestDuckduckgoApiWebSearch:
         # Create an instance of DuckduckgoApiWebSearch with a rate limit of 1 search per second & testing it
         searcher = DuckduckgoApiWebSearch(max_search_frequency=1)
 
-        searcher.ddgs.answers = MagicMock(return_value=[{"text": "Mock Answer", "url": "http://mockanswer.com"}])
+        searcher.ddgs.text = MagicMock(return_value=[{
+                                             "title": "Mock Answer",
+                                             "body" : "Mock",
+                                             "href": "http://mockanswer.com"
+                                                    }]
+                                      )
 
         # Record the start time
         start_time = time()
