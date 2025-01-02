@@ -86,9 +86,7 @@ The interaction between these parameters depends on the `use_answers` setting:
 
 Too many requests could cause the API to fail because of rate limitations.
 
-To fix this issue use a proxy or reduce the number of calls.
-
-This issue could also cause tests to fail.
+To fix this issue use a proxy or reduce the frequency of the calls.
 
 ## License
 

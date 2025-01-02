@@ -1,7 +1,7 @@
 from time import time
 
 from haystack import Document
-
+from unittest.mock import MagicMock
 from duckduckgo_api_haystack import DuckduckgoApiWebSearch
 
 class TestDuckduckgoApiWebSearch:
@@ -22,9 +22,12 @@ class TestDuckduckgoApiWebSearch:
         answer = component.run("What is frico?")
         assert isinstance(answer['documents'][0], Document)
 
+
     def test_rate_limiting(self):
         # Create an instance of DuckduckgoApiWebSearch with a rate limit of 1 search per second & testing it
         searcher = DuckduckgoApiWebSearch(max_search_frequency=1)
+
+        searcher.ddgs.answers = MagicMock(return_value=[{"text": "Mock Answer"}])
 
         # Record the start time
         start_time = time()
