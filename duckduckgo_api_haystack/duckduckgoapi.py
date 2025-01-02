@@ -40,12 +40,12 @@ class DuckduckgoApiWebSearch:
         max_results: Optional[int] = 10,
         region: str = "wt-wt",
         safesearch: str = "moderate",
-        timelimit: str | None = None,
+        timelimit: Optional[str] = None,
         backend: str = "api",
         allowed_domain: str = "",
         timeout: int = 10,
         use_answers: bool = False,
-        proxy: str | None = None,
+        proxy: Optional[str] = None,
         max_search_frequency: float = float('inf')
     ):
         """
