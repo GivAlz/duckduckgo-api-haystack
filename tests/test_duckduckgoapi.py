@@ -27,7 +27,7 @@ class TestDuckduckgoApiWebSearch:
         # Create an instance of DuckduckgoApiWebSearch with a rate limit of 1 search per second & testing it
         searcher = DuckduckgoApiWebSearch(max_search_frequency=1)
 
-        searcher.ddgs.answers = MagicMock(return_value=[{"text": "Mock Answer"}])
+        searcher.ddgs.answers = MagicMock(return_value=[{"text": "Mock Answer", "url": "http://mockanswer.com"}])
 
         # Record the start time
         start_time = time()
