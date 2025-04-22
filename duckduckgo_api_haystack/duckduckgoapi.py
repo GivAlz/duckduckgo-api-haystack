@@ -41,7 +41,7 @@ class DuckduckgoApiWebSearch:
         region: str = "wt-wt",
         safesearch: str = "moderate",
         timelimit: Optional[str] = None,
-        backend: str = "api",
+        backend: str = "auto",
         allowed_domain: str = "",
         timeout: int = 10,
         use_answers: bool = False,
@@ -64,7 +64,10 @@ class DuckduckgoApiWebSearch:
         :param region: defaults to no region
         :param safesearch: Defaults to "moderate", other options: "on" and "off".
         :param timelimit: d, w, m. Defaults to None.
-        :param backend: api, html, lite. Defaults to api.
+        :param backend: auto, html, lite. Defaults to auto.
+                auto - try all backends in random order,
+                html - collect data from https://html.duckduckgo.com,
+                lite - collect data from https://lite.duckduckgo.com.
         :param allowed_domain: search on a specific domain
         :param timeout: Timeout for each search request
         :param use_answers: (bool) Includes the answer search by duckduckgo. Defaults to False.
