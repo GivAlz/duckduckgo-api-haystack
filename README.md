@@ -62,7 +62,7 @@ The `DuckduckgoApiWebSearch` component accepts several parameters to customize i
 - `region (str)`: Search region (default: "wt-wt" for worldwide).
 - `safesearch (str)`: SafeSearch setting ("on", "moderate", or "off"; default: "moderate").
 - `timelimit (str, optional)`: Time limit for search results (e.g., "d" for day, "w" for week, "m" for month).
-- `backend (str)`: Search backend to use ("api", "html", or "lite"; default: "api").
+- `backend (str)`: Search backend to use ("auto", "html", or "lite"; default: "auto").
 - `allowed_domain (str)`: Restrict search to a specific domain (default: "").
 - `timeout (int)`: Timeout for each search request in seconds (default: 10).
 - `use_answers (bool)`: Include DuckDuckGo's answer box in results (default: False).
