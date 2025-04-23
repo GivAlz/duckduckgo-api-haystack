@@ -11,7 +11,7 @@ class TestDuckduckgoApiWebSearch:
                                            use_answers=True, proxy="proxytest.com")
         data = component.to_dict()
         new_component = DuckduckgoApiWebSearch().from_dict(data)
-        assert data == {'init_parameters': {'allowed_domain': 'test.com', 'backend': 'api', 'max_results': 10,
+        assert data == {'init_parameters': {'allowed_domain': 'test.com', 'backend': 'auto', 'max_results': 10,
                                             'proxy': 'proxytest.com', 'region': 'wt-wt', 'safesearch': 'moderate',
                                             'timelimit': None, 'timeout': 20, 'top_k': 12, 'use_answers': True},
                         'type': 'duckduckgo_api_haystack.duckduckgoapi.DuckduckgoApiWebSearch'}

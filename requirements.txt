@@ -1,2 +1,2 @@
-duckduckgo-search
+duckduckgo-search~=8.0.1
 haystack-ai
