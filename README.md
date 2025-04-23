@@ -62,7 +62,7 @@ The `DuckduckgoApiWebSearch` component accepts several parameters to customize i
 - `region (str)`: Search region (default: "wt-wt" for worldwide).
 - `safesearch (str)`: SafeSearch setting ("on", "moderate", or "off"; default: "moderate").
 - `timelimit (str, optional)`: Time limit for search results (e.g., "d" for day, "w" for week, "m" for month).
-- `backend (str)`: Search backend to use ("api", "html", or "lite"; default: "api").
+- `backend (str)`: Search backend to use ("auto", "html", or "lite"; default: "auto").
 - `allowed_domain (str)`: Restrict search to a specific domain (default: "").
 - `timeout (int)`: Timeout for each search request in seconds (default: 10).
 - `use_answers (bool)`: Include DuckDuckGo's answer box in results (default: False).
@@ -86,6 +86,13 @@ The interaction between these parameters depends on the `use_answers` setting:
 
 Too many requests could cause the API to fail because of rate limitations; to fix this issue use a proxy or reduce 
 the frequency of the calls.
+
+## Python 3.8
+
+The duckduckgo api package supports python version 3.8 only up to version 7.2.1, which will be installed by requirements.txt
+if python 3.8 is detected.
+
+Support might end in the future.
 
 ## License
 
