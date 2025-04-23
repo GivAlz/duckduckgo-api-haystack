@@ -87,6 +87,13 @@ The interaction between these parameters depends on the `use_answers` setting:
 Too many requests could cause the API to fail because of rate limitations; to fix this issue use a proxy or reduce 
 the frequency of the calls.
 
+## Python 3.8
+
+The duckduckgo api package supports python version 3.8 only up to version 7.2.1, which will be installed by requirements.txt
+if python 3.8 is detected.
+
+Support might end in the future.
+
 ## License
 
 `duckduckgo-api-websearch` is distributed under the terms of the [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) license.

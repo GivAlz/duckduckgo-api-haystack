@@ -68,6 +68,7 @@ class DuckduckgoApiWebSearch:
                 auto - try all backends in random order,
                 html - collect data from https://html.duckduckgo.com,
                 lite - collect data from https://lite.duckduckgo.com.
+                Remark: for python v 3.8 the options are api, html, lite.
         :param allowed_domain: search on a specific domain
         :param timeout: Timeout for each search request
         :param use_answers: (bool) Includes the answer search by duckduckgo. Defaults to False.
